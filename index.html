@@ -4,6 +4,134 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>NOXAXIS Ltd</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid #111;
+  }
+
+  .logo {
+    color: #00ffff;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+
+  .primary {
+    background: #00ffff;
+    color: black;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 120px 20px 60px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+    margin: 0;
+  }
+
+  .hero h1 span {
+    color: #00ffff;
+  }
+
+  .hero p {
+    color: #aaa;
+    font-size: 18px;
+    max-width: 700px;
+    margin: 20px auto;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat h3 {
+    color: #00ffff;
+    margin: 0;
+  }
+
+  .section {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+  }
+
+  .card {
+    background: #0d0d0d;
+    border: 1px solid #111;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .cta {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .cta button {
+    background: #00ffff;
+    color: black;
+    font-size: 16px;
+    padding: 14px 30px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: #555;
+    border-top: 1px solid #111;
+  }
+</style>
+  <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: #050505;
+    overflow-x: hidden;
+  }
+
+  /* Animated background */
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.6;
+    animation: float 12s infinite ease-in-out;
   }
 
   body::before {
@@ -143,233 +271,6 @@
     padding: 30px;
     color: #555;
     border-top: 1px solid rgba(255,255,255,0.05);
-  }
-</style>
-  }
-
-  @keyframes float {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(80px, 60px); }
-    100% { transform: translate(0, 0); }
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-  }
-
-  .logo {
-    color: #00ffff;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-
-  .btn {
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: 0.3s ease;
-  }
-
-  .btn:hover {
-    transform: translateY(-2px);
-  }
-
-  .primary {
-    background: linear-gradient(90deg, #00ffff, #7f5af0);
-    color: black;
-    font-weight: bold;
-  }
-
-  .hero {
-    text-align: center;
-    padding: 120px 20px 60px;
-  }
-
-  .hero h1 {
-    font-size: 54px;
-    margin: 0;
-    background: linear-gradient(90deg, #00ffff, #7f5af0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .hero p {
-    color: #bbb;
-    font-size: 18px;
-    max-width: 750px;
-    margin: 20px auto;
-  }
-
-  .stats {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-  }
-
-  .stat {
-    text-align: center;
-    background: rgba(255,255,255,0.03);
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s;
-  }
-
-  .stat:hover {
-    transform: translateY(-5px);
-    border-color: #00ffff;
-  }
-
-  .stat h3 {
-    color: #00ffff;
-    margin: 0;
-  }
-
-  .section {
-    max-width: 900px;
-    margin: auto;
-    padding: 60px 20px;
-    text-align: center;
-  }
-
-  .card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 25px;
-    border-radius: 14px;
-    margin-top: 20px;
-    transition: 0.3s;
-  }
-
-  .card:hover {
-    transform: scale(1.02);
-    border-color: #7f5af0;
-  }
-
-  .cta {
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .cta button {
-    background: linear-gradient(90deg, #00ffff, #7f5af0);
-    color: black;
-    font-size: 16px;
-    padding: 14px 30px;
-    border-radius: 10px;
-  }
-
-  footer {
-    text-align: center;
-    padding: 30px;
-    color: #555;
-    border-top: 1px solid rgba(255,255,255,0.05);
-  }
-</style>
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    border-bottom: 1px solid #111;
-  }
-
-  .logo {
-    color: #00ffff;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-
-  .btn {
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-  }
-
-  .primary {
-    background: #00ffff;
-    color: black;
-  }
-
-  .hero {
-    text-align: center;
-    padding: 120px 20px 60px;
-  }
-
-  .hero h1 {
-    font-size: 52px;
-    margin: 0;
-  }
-
-  .hero h1 span {
-    color: #00ffff;
-  }
-
-  .hero p {
-    color: #aaa;
-    font-size: 18px;
-    max-width: 700px;
-    margin: 20px auto;
-  }
-
-  .stats {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px 20px;
-    border-top: 1px solid #111;
-    border-bottom: 1px solid #111;
-    flex-wrap: wrap;
-  }
-
-  .stat {
-    text-align: center;
-  }
-
-  .stat h3 {
-    color: #00ffff;
-    margin: 0;
-  }
-
-  .section {
-    max-width: 900px;
-    margin: auto;
-    padding: 60px 20px;
-  }
-
-  .card {
-    background: #0d0d0d;
-    border: 1px solid #111;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-
-  .cta {
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .cta button {
-    background: #00ffff;
-    color: black;
-    font-size: 16px;
-    padding: 14px 30px;
-  }
-
-  footer {
-    text-align: center;
-    padding: 30px;
-    color: #555;
-    border-top: 1px solid #111;
   }
 </style>
 </head>
