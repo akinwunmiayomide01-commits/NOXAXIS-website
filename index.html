@@ -1,113 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOXAXIS Ltd</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NOXAXIS Ltd</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
-      color: white;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #0f0f0f, #000);
+    color: white;
+  }
 
-    header {
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      background: black;
-      color: #00ffff;
-    }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.6);
+    border-bottom: 1px solid #111;
+  }
 
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
+  .logo {
+    color: #00ffff;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
 
-    .hero h1 {
-      font-size: 50px;
-      color: #00ffff;
-    }
+  .nav a {
+    color: #aaa;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 14px;
+  }
 
-    .hero p {
-      font-size: 18px;
-      margin-top: 10px;
-      color: #ccc;
-    }
+  .nav a:hover {
+    color: #00ffff;
+  }
 
-    .btn {
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #00ffff;
-      color: black;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-    }
+  .hero {
+    text-align: center;
+    padding: 120px 20px 80px;
+  }
 
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+  .hero h1 {
+    font-size: 56px;
+    margin: 0;
+    background: linear-gradient(90deg, #00ffff, #7f5af0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-    .section h2 {
-      color: #00ffff;
-    }
+  .hero p {
+    font-size: 18px;
+    color: #bbb;
+    margin-top: 15px;
+  }
 
-    .footer {
-      text-align: center;
-      padding: 20px;
-      background: black;
-      color: #777;
-    }
-  </style>
+  .cta {
+    margin-top: 30px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+
+  .primary {
+    background: #00ffff;
+    color: black;
+  }
+
+  .primary:hover {
+    transform: scale(1.05);
+  }
+
+  .secondary {
+    background: transparent;
+    border: 1px solid #00ffff;
+    color: #00ffff;
+  }
+
+  .section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .section h2 {
+    color: #00ffff;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid #111;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: #555;
+    border-top: 1px solid #111;
+    margin-top: 60px;
+  }
+</style>
 </head>
 
 <body>
 
-<header>NOXAXIS Ltd</header>
+<header>
+  <div class="logo">NOXAXIS</div>
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+  </div>
+</header>
 
 <section class="hero">
   <h1>Gaming Infrastructure for Africa</h1>
-  <p>Powering seamless in-game payments, subscriptions, and digital experiences.</p>
-  <button class="btn">Coming Soon</button>
+  <p>Powering fast, secure and scalable digital gaming payments and systems.</p>
+
+  <div class="cta">
+    <button class="btn primary" onclick="openNoxstore()">Launch Noxstore</button>
+    <button class="btn secondary">Learn More</button>
+  </div>
 </section>
 
-<section class="section">
-  <h2>What We Do</h2>
-  <p>
-    NOXAXIS builds scalable payment infrastructure for gamers across Africa.
-    From top-ups to subscriptions, we simplify digital transactions.
-  </p>
+<section class="section" id="products">
+  <h2>Our Product</h2>
+
+  <div class="card">
+    <h3>Noxstore</h3>
+    <p>
+      A gaming payment infrastructure platform for top-ups, subscriptions,
+      and in-game purchases across Africa.
+    </p>
+    <button class="btn primary" onclick="openNoxstore()">Open Product</button>
+  </div>
 </section>
 
-<section class="section">
-  <h2>Noxstore</h2>
-  <p>
-    Our flagship platform enabling fast, secure, and reliable gaming payments
-    across multiple titles and platforms.
-    <section class="section">
-  <h2>Noxstore</h2>
-  <p>
-    Fast, secure gaming payments platform for Africa.
-  </p>
-  <button class="btn" onclick="goToProduct()">Open Noxstore</button>
-</section>
+<section class="section" id="about">
+  <h2>About NOXAXIS</h2>
 
-<script>
-  function goToProduct() {
-    window.location.href = "https://noxstore.vercel.app";
-  }
-</script>
-  </p>
+  <div class="card">
+    NOXAXIS Ltd builds next-generation digital infrastructure for gaming and
+    entertainment ecosystems, starting with payment systems designed for scale.
+  </div>
 </section>
 
 <div class="footer">
-  © 2026 NOXAXIS Ltd. All rights reserved.
+  © 2026 NOXAXIS Ltd. Built for scale.
 </div>
+
+<script>
+  function openNoxstore() {
+    window.location.href = "https://noxstore.vercel.app";
+  }
+</script>
 
 </body>
 </html>
