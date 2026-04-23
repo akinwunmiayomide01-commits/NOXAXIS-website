@@ -9,112 +9,6 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #050505;
-    color: white;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    border-bottom: 1px solid #111;
-  }
-
-  .logo {
-    color: #00ffff;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-
-  .btn {
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-  }
-
-  .primary {
-    background: #00ffff;
-    color: black;
-  }
-
-  .hero {
-    text-align: center;
-    padding: 120px 20px 60px;
-  }
-
-  .hero h1 {
-    font-size: 52px;
-    margin: 0;
-  }
-
-  .hero h1 span {
-    color: #00ffff;
-  }
-
-  .hero p {
-    color: #aaa;
-    font-size: 18px;
-    max-width: 700px;
-    margin: 20px auto;
-  }
-
-  .stats {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px 20px;
-    border-top: 1px solid #111;
-    border-bottom: 1px solid #111;
-    flex-wrap: wrap;
-  }
-
-  .stat {
-    text-align: center;
-  }
-
-  .stat h3 {
-    color: #00ffff;
-    margin: 0;
-  }
-
-  .section {
-    max-width: 900px;
-    margin: auto;
-    padding: 60px 20px;
-  }
-
-  .card {
-    background: #0d0d0d;
-    border: 1px solid #111;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-
-  .cta {
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .cta button {
-    background: #00ffff;
-    color: black;
-    font-size: 16px;
-    padding: 14px 30px;
-  }
-
-  footer {
-    text-align: center;
-    padding: 30px;
-    color: #555;
-    border-top: 1px solid #111;
-  }
-</style>
-  <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
     color: white;
     background: #050505;
     overflow-x: hidden;
@@ -156,15 +50,15 @@
   header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 40px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
   }
 
-  .logo {
-    color: #00ffff;
-    font-weight: bold;
-    letter-spacing: 2px;
+  .logo-img {
+    height: 40px;
+    width: auto;
   }
 
   .btn {
@@ -277,26 +171,25 @@
 
 <body>
 
-
 <header>
-  <div class="logo">NOXAXIS</div>
+  <img src="assets/noxaxis-logo.png" alt="NOXAXIS Ltd" class="logo-img">
   <button class="btn primary" onclick="openApp()">Launch Noxstore</button>
 </header>
 
 <section class="hero">
-  <h1>Infrastructure for <span>Gaming Payments</span> in Africa</h1>
+  <h1>Infrastructure for Gaming Payments in Africa</h1>
   <p>
     NOXAXIS builds the payment layer that powers gaming transactions, subscriptions,
     and digital purchases across emerging markets.
   </p>
-  <section class="section">
-  <h2>Our Vision</h2>
+</section>
 
+<section class="section">
+  <h2>Our Vision</h2>
   <div class="card">
     To become the default gaming payment infrastructure across Africa,
     powering every digital transaction inside games, platforms, and esports ecosystems.
   </div>
-</section>
 </section>
 
 <section class="stats">
@@ -316,7 +209,6 @@
 
 <section class="section">
   <h2>Product</h2>
-
   <div class="card">
     <h3>Noxstore</h3>
     <p>
@@ -327,18 +219,16 @@
 </section>
 
 <section class="cta">
-  <section class="cta">
   <h2>Join the future of gaming payments</h2>
   <p>Noxstore is currently in early development.</p>
   <button onclick="openApp()">Access Noxstore</button>
 </section>
-  <h2>Why NOXAXIS</h2>
 
+<section class="section">
+  <h2>Why NOXAXIS</h2>
   <div class="card">
-    <p>
-      NOXAXIS is building the payment infrastructure layer for gaming in emerging markets,
-      starting with fast and secure in-game transactions.
-    </p>
+    NOXAXIS is building the payment infrastructure layer for gaming in emerging markets,
+    starting with fast and secure in-game transactions.
   </div>
 
   <div class="stats">
@@ -346,18 +236,15 @@
       <h3>Built for Scale</h3>
       <p>Designed for millions of users</p>
     </div>
-
     <div class="stat">
       <h3>Secure by Design</h3>
       <p>Encrypted transaction systems</p>
     </div>
-
     <div class="stat">
       <h3>Gaming Focused</h3>
       <p>Optimized for FPS & battle royale economies</p>
     </div>
   </div>
-</section>
 </section>
 
 <footer>
