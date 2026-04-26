@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: radial-gradient(circle at top, #0a0a0a, #050505);
   color: #eaeaea;
 }
@@ -23,17 +23,21 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .logo-container img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0,240,255,0.4));
 }
 
 .logo-container span {
   color: #00f0ff;
   font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
 /* NAV */
@@ -54,7 +58,7 @@ body {
 
 /* HERO */
 .hero {
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 .hero h1 {
@@ -75,6 +79,7 @@ button {
   border-radius: 10px;
   color: black;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* IMAGE */
@@ -130,5 +135,10 @@ button {
 
   .features {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .logo-container img {
+    width: 70px;
+    height: 70px;
   }
 }
