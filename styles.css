@@ -37,7 +37,6 @@ body {
   color: #00f0ff;
   font-weight: bold;
   font-size: 20px;
-  letter-spacing: 1px;
 }
 
 /* NAV */
@@ -91,11 +90,31 @@ button {
 }
 
 /* SECTIONS */
-.about, .contact, .noxstore {
+.about, .contact {
   text-align: center;
   padding: 50px 20px;
 }
 
+/* NOXSTORE FIXED SPACING */
+.noxstore {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.noxstore p {
+  margin-bottom: 25px;
+  color: #aaa;
+}
+
+.noxstore a {
+  display: inline-block;
+}
+
+.noxstore button {
+  margin-top: 10px;
+}
+
+/* FEATURES */
 .features {
   display: grid;
   gap: 15px;
