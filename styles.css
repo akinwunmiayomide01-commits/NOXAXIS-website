@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
   background: radial-gradient(circle at top, #0a0a0a, #050505);
   color: #eaeaea;
 }
@@ -14,10 +14,8 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 15px 20px;
-  background: rgba(10,10,10,0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(10,10,10,0.85);
   border-bottom: 1px solid rgba(0,240,255,0.1);
 }
 
@@ -29,114 +27,80 @@ body {
 }
 
 .logo-container img {
-  width: 38px;
-  height: 38px;
-  border-radius: 6px;
+  width: 40px;
+  height: 40px;
 }
 
 .logo-container span {
   color: #00f0ff;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
-/* NAV LINKS */
+/* NAV */
 .nav-links {
   display: none;
   flex-direction: column;
-  gap: 10px;
 }
 
 .nav-links a {
   color: #bbb;
   text-decoration: none;
-  transition: 0.3s;
+  margin: 5px 0;
 }
 
-.nav-links a:hover {
-  color: #00f0ff;
+.menu-toggle {
+  font-size: 24px;
 }
 
 /* HERO */
 .hero {
-  padding: 50px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  padding: 40px 20px;
 }
 
 .hero h1 {
-  font-size: clamp(28px, 5vw, 52px);
-  font-weight: 800;
-  line-height: 1.2;
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
 .hero p {
   color: #aaa;
-  font-size: 15px;
+  margin-bottom: 20px;
 }
 
 /* BUTTON */
 button {
   background: linear-gradient(135deg, #00f0ff, #7a00ff);
   border: none;
-  padding: 14px 22px;
-  color: #000;
-  font-weight: bold;
+  padding: 12px 20px;
   border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  width: fit-content;
+  color: black;
+  font-weight: bold;
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0,240,255,0.3);
-}
-
-/* HERO IMAGE */
+/* IMAGE */
 .hero-image img {
   width: 100%;
-  max-width: 420px;
-  filter: drop-shadow(0 0 25px rgba(0,240,255,0.25));
+  max-width: 500px;
+  margin-top: 20px;
+  border-radius: 10px;
 }
 
-/* FEATURES */
+/* SECTIONS */
+.about, .contact, .noxstore {
+  text-align: center;
+  padding: 50px 20px;
+}
+
 .features {
   display: grid;
   gap: 15px;
-  padding: 40px 20px;
+  padding: 20px;
 }
 
 .card {
-  background: linear-gradient(145deg, #0d0d0d, #111);
-  border: 1px solid rgba(0,240,255,0.1);
+  background: #111;
   padding: 20px;
-  border-radius: 14px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(0,240,255,0.4);
-  box-shadow: 0 0 20px rgba(0,240,255,0.15);
-}
-
-/* ABOUT */
-.about {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.about h2 {
-  color: #00f0ff;
-  margin-bottom: 10px;
-}
-
-/* CONTACT */
-.contact {
-  text-align: center;
-  padding: 50px 20px;
+  border-radius: 10px;
 }
 
 /* FOOTER */
@@ -148,16 +112,20 @@ button:hover {
 
 /* TABLET */
 @media (min-width: 768px) {
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .nav-links {
     display: flex;
     flex-direction: row;
     gap: 20px;
   }
 
-  .hero {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  .menu-toggle {
+    display: none;
   }
 
   .features {
