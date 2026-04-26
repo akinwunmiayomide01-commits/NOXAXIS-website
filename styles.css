@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
   background: #050505;
   color: #eaeaea;
 }
@@ -17,40 +17,29 @@ body {
   align-items: center;
   padding: 15px;
   background: #0a0a0a;
+  border-bottom: 1px solid #111;
 }
 
-/* LOGO */
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-container img {
-  width: 40px;
-  height: 40px;
-}
-
-.logo-container span {
+.logo {
   color: #00f0ff;
   font-weight: bold;
-}
-
-/* NAV */
-.nav-links {
-  display: none;
-  flex-direction: column;
-}
-
-.nav-links a {
-  color: #ccc;
-  text-decoration: none;
-  margin: 5px 0;
+  font-size: 20px;
 }
 
 .menu-toggle {
   font-size: 24px;
   cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-links a {
+  color: #ccc;
+  text-decoration: none;
 }
 
 /* HERO */
@@ -60,26 +49,27 @@ body {
 
 .hero h1 {
   font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .hero p {
-  margin: 10px 0;
+  color: #aaa;
+  margin-bottom: 20px;
 }
 
-/* BUTTON */
 button {
   background: #00f0ff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   color: black;
   border-radius: 8px;
   cursor: pointer;
 }
 
 /* IMAGE */
-.hero img {
+.hero-image img {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   margin-top: 20px;
 }
 
@@ -87,6 +77,10 @@ button {
 .about {
   padding: 40px 20px;
   text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 10px;
 }
 
 /* FEATURES */
