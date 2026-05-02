@@ -29,7 +29,6 @@
       margin: auto;
     }
 
-    /* NAV */
     nav {
       display: flex;
       justify-content: space-between;
@@ -42,7 +41,6 @@
       align-items: center;
       gap: 10px;
       font-weight: 700;
-      letter-spacing: 1px;
     }
 
     .logo img {
@@ -60,7 +58,6 @@
       color: #fff;
     }
 
-    /* HERO */
     .hero {
       text-align: center;
       padding: 90px 0 60px;
@@ -94,7 +91,6 @@
       font-weight: 600;
       border: none;
       cursor: pointer;
-      transition: 0.2s ease;
     }
 
     .primary {
@@ -108,11 +104,6 @@
       color: #3b82f6;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    /* SECTIONS */
     section {
       padding: 70px 0;
     }
@@ -130,7 +121,6 @@
       margin: auto;
     }
 
-    /* GRID */
     .grid {
       margin-top: 40px;
       display: grid;
@@ -145,16 +135,11 @@
       border: 1px solid #1f2937;
     }
 
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
     .card p {
       color: #9ca3af;
       font-size: 14px;
     }
 
-    /* WAITLIST */
     .waitlist {
       text-align: center;
     }
@@ -191,7 +176,6 @@
       color: #22c55e;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 30px;
@@ -199,7 +183,6 @@
       font-size: 13px;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2rem;
@@ -238,40 +221,38 @@
   <div class="hero">
     <h1>The Fastest Gaming Payments in Africa</h1>
     <p>
-      NOXAXIS builds the infrastructure powering instant, secure, and seamless gaming transactions across Africa.
+      NOXAXIS builds infrastructure powering instant, secure gaming transactions across Africa.
     </p>
 
     <div class="cta">
-      <a href="https://noxstore-frontend.vercel.app" target="_blank">
-        <button class="btn primary">Launch Noxstore</button>
-      </a>
-      <a href="#waitlist">
-        <button class="btn secondary">Join Waitlist</button>
-      </a>
+      <button class="btn primary" onclick="track('launch_click')">
+        Launch Noxstore
+      </button>
+
+      <button class="btn secondary" onclick="track('waitlist_click')">
+        Join Waitlist
+      </button>
     </div>
   </div>
 
   <!-- PROBLEM -->
   <section id="problem">
     <h2>The Problem</h2>
-    <p class="section-text">
-      African gamers face unreliable payment systems that slow down or block in-game purchases.
-    </p>
 
     <div class="grid">
       <div class="card">
         <h3>Slow Payments</h3>
-        <p>Transactions take too long during gameplay moments.</p>
+        <p>Transactions delay gaming experience.</p>
       </div>
 
       <div class="card">
         <h3>Failed Transactions</h3>
-        <p>Payment failures interrupt user experience and trust.</p>
+        <p>Payment failures reduce trust.</p>
       </div>
 
       <div class="card">
-        <h3>Limited Infrastructure</h3>
-        <p>No unified system built specifically for gamers.</p>
+        <h3>Fragmented Systems</h3>
+        <p>No unified gaming payment layer.</p>
       </div>
     </div>
   </section>
@@ -279,35 +260,20 @@
   <!-- PRODUCT -->
   <section id="product">
     <h2>Noxstore</h2>
-    <p class="section-text">
-      A gaming payment platform enabling instant purchases, local payment support, and secure transactions.
-    </p>
 
     <div class="grid">
-      <div class="card">
-        <h3>⚡ Instant Top-ups</h3>
-        <p>Payments completed in seconds.</p>
-      </div>
-
-      <div class="card">
-        <h3>🔒 Secure System</h3>
-        <p>Built on trusted payment infrastructure.</p>
-      </div>
-
-      <div class="card">
-        <h3>🌍 Local Payments</h3>
-        <p>Supports African banking systems.</p>
-      </div>
+      <div class="card">Instant Top-ups</div>
+      <div class="card">Secure Payments</div>
+      <div class="card">Local Support</div>
     </div>
   </section>
 
   <!-- WAITLIST -->
   <section id="waitlist" class="waitlist">
     <h2>Join the Waitlist</h2>
-    <p class="section-text">Get early access and product updates.</p>
 
     <form onsubmit="submitForm(event)">
-      <input type="email" id="email" placeholder="Enter your email" required />
+      <input type="email" id="email" placeholder="Enter email" required />
       <button type="submit">Join</button>
     </form>
 
@@ -316,16 +282,53 @@
 
   <!-- FOOTER -->
   <footer>
-    © 2026 NOXAXIS Ltd. Built for African gaming infrastructure.
+    © 2026 NOXAXIS Ltd
   </footer>
 
 </div>
 
+<!-- SUPABASE + ANALYTICS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
 <script>
-function submitForm(e) {
+const SUPABASE_URL = "YOUR_SUPABASE_URL";
+const SUPABASE_KEY = "YOUR_ANON_KEY";
+
+let supabase;
+
+window.addEventListener("load", () => {
+  supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  track("page_view", { page: "landing" });
+});
+
+async function track(event_name, metadata = {}) {
+  if (!supabase) return;
+
+  await supabase.from("analytics_events").insert([
+    { event_name, metadata }
+  ]);
+}
+
+async function submitForm(e) {
   e.preventDefault();
+
+  const email = document.getElementById("email").value;
+
+  if (!supabase) return;
+
+  await supabase.from("waitlist").insert([{ email }]);
+
+  await track("waitlist_signup", {
+    email_domain: email.split("@")[1]
+  });
+
   document.getElementById("success").style.display = "block";
   document.getElementById("email").value = "";
+
+  setTimeout(() => {
+    document.getElementById("success").style.display = "none";
+  }, 4000);
 }
 </script>
 
