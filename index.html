@@ -5,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NOXAXIS Ltd</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Fast, secure gaming payments in Africa. Instant top-ups and seamless transactions with Noxstore.">
-  <meta property="og:title" content="NOXAXIS - Gaming Payments in Africa">
-  <meta property="og:description" content="Instant top-ups and seamless transactions for gamers.">
+  <meta name="description" content="NOXAXIS builds the fastest gaming payment infrastructure in Africa. Instant top-ups and seamless transactions for gamers.">
 
-  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -22,7 +18,7 @@
     }
 
     body {
-      background: #0a0a0f;
+      background: #070A12;
       color: #fff;
       line-height: 1.6;
     }
@@ -33,43 +29,59 @@
       margin: auto;
     }
 
-    header {
+    /* NAV */
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 0;
     }
 
-    header img {
-      width: 40px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
-    nav a {
+    .logo img {
+      width: 34px;
+    }
+
+    .nav-links a {
+      color: #aaa;
       margin-left: 20px;
       text-decoration: none;
-      color: #ccc;
+      font-size: 14px;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: #fff;
     }
 
+    /* HERO */
     .hero {
       text-align: center;
-      padding: 100px 0;
+      padding: 90px 0 60px;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      line-height: 1.2;
     }
 
     .hero p {
-      color: #aaa;
-      margin-bottom: 30px;
+      color: #a1a1aa;
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.05rem;
     }
 
-    .buttons {
+    .cta {
+      margin-top: 30px;
       display: flex;
       justify-content: center;
       gap: 15px;
@@ -77,74 +89,129 @@
     }
 
     .btn {
-      padding: 12px 24px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 600;
       border: none;
       cursor: pointer;
-      font-weight: 600;
-      border-radius: 8px;
+      transition: 0.2s ease;
     }
 
-    .btn-primary {
-      background: #2563eb;
+    .primary {
+      background: #3b82f6;
       color: white;
     }
 
-    .btn-secondary {
+    .secondary {
       background: transparent;
-      border: 1px solid #2563eb;
-      color: #2563eb;
+      border: 1px solid #3b82f6;
+      color: #3b82f6;
     }
 
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* SECTIONS */
     section {
-      padding: 80px 0;
+      padding: 70px 0;
     }
 
     h2 {
       text-align: center;
+      font-size: 1.8rem;
       margin-bottom: 30px;
     }
 
+    p.section-text {
+      text-align: center;
+      color: #a1a1aa;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* GRID */
     .grid {
+      margin-top: 40px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
     }
 
     .card {
-      background: #111827;
+      background: #0F172A;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
+      border: 1px solid #1f2937;
     }
 
     .card h3 {
       margin-bottom: 10px;
     }
 
+    .card p {
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    /* WAITLIST */
     .waitlist {
       text-align: center;
     }
 
-    .waitlist input {
-      padding: 12px;
-      width: 250px;
-      border-radius: 6px;
-      border: none;
-      margin-right: 10px;
+    form {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .waitlist button {
-      padding: 12px 20px;
-      border: none;
-      background: #2563eb;
+    input {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      width: 260px;
+      background: #0F172A;
       color: white;
-      border-radius: 6px;
+    }
+
+    form button {
+      padding: 12px 18px;
+      background: #3b82f6;
+      border: none;
+      color: white;
+      border-radius: 8px;
       cursor: pointer;
     }
 
+    #success {
+      display: none;
+      margin-top: 10px;
+      color: #22c55e;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 30px 0;
-      color: #777;
+      padding: 30px;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      input {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -153,50 +220,58 @@
 
 <div class="container">
 
-  <!-- HEADER -->
-  <header>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <img src="assets/logo.png" alt="logo">
-      <strong>NOXAXIS</strong>
+  <!-- NAV -->
+  <nav>
+    <div class="logo">
+      <img src="assets/logo.png" />
+      NOXAXIS
     </div>
 
-    <nav>
-      <a href="#product">Product</a>
+    <div class="nav-links">
       <a href="#problem">Problem</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+      <a href="#product">Product</a>
+      <a href="#waitlist">Waitlist</a>
+    </div>
+  </nav>
 
   <!-- HERO -->
-  <section class="hero">
-    <h1>The Fastest Way to Pay for Games in Africa</h1>
-    <p>Instant top-ups, secure transactions, and seamless gaming payments built for African gamers.</p>
+  <div class="hero">
+    <h1>The Fastest Gaming Payments in Africa</h1>
+    <p>
+      NOXAXIS builds the infrastructure powering instant, secure, and seamless gaming transactions across Africa.
+    </p>
 
-    <div class="buttons">
+    <div class="cta">
       <a href="https://noxstore-frontend.vercel.app" target="_blank">
-        <button class="btn btn-primary">Launch Noxstore</button>
+        <button class="btn primary">Launch Noxstore</button>
       </a>
       <a href="#waitlist">
-        <button class="btn btn-secondary">Join Waitlist</button>
+        <button class="btn secondary">Join Waitlist</button>
       </a>
     </div>
-  </section>
+  </div>
 
   <!-- PROBLEM -->
   <section id="problem">
     <h2>The Problem</h2>
+    <p class="section-text">
+      African gamers face unreliable payment systems that slow down or block in-game purchases.
+    </p>
+
     <div class="grid">
       <div class="card">
         <h3>Slow Payments</h3>
-        <p>Gamers face delays when purchasing in-game items.</p>
+        <p>Transactions take too long during gameplay moments.</p>
       </div>
+
       <div class="card">
         <h3>Failed Transactions</h3>
-        <p>Unreliable systems cause frustration and lost purchases.</p>
+        <p>Payment failures interrupt user experience and trust.</p>
       </div>
+
       <div class="card">
-        <h3>Limited Options</h3>
-        <p>Few platforms support local African payment methods.</p>
+        <h3>Limited Infrastructure</h3>
+        <p>No unified system built specifically for gamers.</p>
       </div>
     </div>
   </section>
@@ -204,27 +279,24 @@
   <!-- PRODUCT -->
   <section id="product">
     <h2>Noxstore</h2>
-    <p style="text-align:center; max-width:600px; margin:auto;">
-      A gaming payment platform enabling instant purchases, local payment methods,
-      and secure transactions for players across Africa.
+    <p class="section-text">
+      A gaming payment platform enabling instant purchases, local payment support, and secure transactions.
     </p>
 
-    <div class="grid" style="margin-top:30px;">
+    <div class="grid">
       <div class="card">
-        <h3>⚡ Instant Transactions</h3>
-        <p>Top-up and purchase in seconds.</p>
+        <h3>⚡ Instant Top-ups</h3>
+        <p>Payments completed in seconds.</p>
       </div>
+
       <div class="card">
-        <h3>🔒 Secure Payments</h3>
-        <p>Powered by trusted payment gateways.</p>
+        <h3>🔒 Secure System</h3>
+        <p>Built on trusted payment infrastructure.</p>
       </div>
+
       <div class="card">
         <h3>🌍 Local Payments</h3>
-        <p>Built for African banking systems.</p>
-      </div>
-      <div class="card">
-        <h3>🎮 Gamer Focused</h3>
-        <p>Designed for competitive players.</p>
+        <p>Supports African banking systems.</p>
       </div>
     </div>
   </section>
@@ -232,33 +304,25 @@
   <!-- WAITLIST -->
   <section id="waitlist" class="waitlist">
     <h2>Join the Waitlist</h2>
-    <p>Be the first to access Noxstore updates and features.</p>
+    <p class="section-text">Get early access and product updates.</p>
 
-    <form onsubmit="handleSubmit(event)">
-      <input type="email" id="email" placeholder="Enter your email" required>
+    <form onsubmit="submitForm(event)">
+      <input type="email" id="email" placeholder="Enter your email" required />
       <button type="submit">Join</button>
     </form>
 
-    <p id="success" style="margin-top:10px;color:lightgreen;display:none;">
-      You're on the list 🚀
-    </p>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="text-align:center;">contact@noxaxis.com</p>
+    <div id="success">You're on the list 🚀</div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 NOXAXIS Ltd. All rights reserved.</p>
+    © 2026 NOXAXIS Ltd. Built for African gaming infrastructure.
   </footer>
 
 </div>
 
 <script>
-function handleSubmit(e) {
+function submitForm(e) {
   e.preventDefault();
   document.getElementById("success").style.display = "block";
   document.getElementById("email").value = "";
